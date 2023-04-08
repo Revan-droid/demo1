@@ -190,45 +190,45 @@
             <h2 class="center">Analysis of Dataset</h2>
             <br/>
             <ul>
-                <li><a href="http://0.0.0.0:5500/templates/Analysis%20Of%20Datase/classified2.html" style="text-decoration:none" class="button-15" method="get" role="button">Binary classification</a></li><br/>
-                <li><a href="http://0.0.0.0:5500/templates/Analysis%20Of%20Datase/classifiedmul.html" style="text-decoration:none" class="button-15" method ="post" role="button" >Multi classification</a></li><br/>
-                <li><a href="http://0.0.0.0:5500/templates/Analysis%20Of%20Datase/correlation2.html" style="text-decoration:none" class="button-15" method ="post" role="button">Correlation matrix for binary labels</a></li><br/>
-                <li><a href="http://0.0.0.0:5500/templates/Analysis%20Of%20Datase/correlationmul.html" style="text-decoration:none" class="button-15" method ="post" role="button">Correlation matrix for multi labels</a></li>
+                <li><a href="{% url 'classified2' %}" style="text-decoration:none" class="button-15" method="post" role="button">Binary classification</a></li><br/>
+                <li><a href="{% url 'classifiedmul' %}" style="text-decoration:none" class="button-15" method ="post" role="button" >Multi classification</a></li><br/>
+                <li><a href="{% url 'correlation2' %}" style="text-decoration:none" class="button-15" method ="post" role="button">Correlation matrix for binary labels</a></li><br/>
+                <li><a href="{% url 'correlationmul' %}" style="text-decoration:none" class="button-15" method ="post" role="button">Correlation matrix for multi labels</a></li>
             </ul>
            </div>
             <div class="box">
                 <ul>
                     <h2 class="center">Binary Label</h2>
                     <br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Binary%20Labels/lg.html" style="text-decoration:none" class="button-15" method="get" role="button">Linear Regression</a></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Binary%20Labels/lrg.html" style="text-decoration:none" class="button-15" method ="post" role="button" >Logistic Regression</a></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Binary%20Labels/lvsm.html" style="text-decoration:none" class="button-15" method ="post" role="button">LSVM</a></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Binary%20Labels/knn.html" style="text-decoration:none" class="button-15" method ="post" role="button">Knn</a></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Binary%20Labels/rf.html" style="text-decoration:none" class="button-15" method ="post" role="button">Random Forest</a></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Binary%20Labels/dt.html" style="text-decoration:none" class="button-15" method ="post" role="button">Decision Tree</a></li>
+                    <li><a href="{% url 'lg' %}" style="text-decoration:none" class="button-15" method="post" role="button">Linear Regression</a></li><br/>
+                    <li><a href="{% url 'lrg' %}" style="text-decoration:none" class="button-15" method ="post" role="button" >Logistic Regression</a></li><br/>
+                    <li><a href="{% url 'lvsm' %}" style="text-decoration:none" class="button-15" method ="post" role="button">LSVM</a></li><br/>
+                    <li><a href="{% url 'knn' %}" style="text-decoration:none" class="button-15" method ="post" role="button">Knn</a></li><br/>
+                    <li><a href="{% url 'rf' %}" style="text-decoration:none" class="button-15" method ="post" role="button">Random Forest</a></li><br/>
+                    <li><a href="{% url 'dt' %}" style="text-decoration:none" class="button-15" method ="post" role="button">Decision Tree</a></li>
                 </ul>
             </div>
             <div class="box">
                 <h2 class="center">Multi Label</h2>
                 <br/>
                 <ul>
-                    <li><a href="http://0.0.0.0:5500/templates/Multi%20Labels/lgm.html"   style="text-decoration:none" class="button-15" method="get" role="button"> Linear Regression</a></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Multi%20Labels/lgrm.html"  style="text-decoration:none" class="button-15" method ="post" role="button" >Logistic Regression</a></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Multi%20Labels/lvsmm.html" style="text-decoration:none" class="button-15" method ="post" role="button">LSVM</a></button></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Multi%20Labels/knnm.html"  style="text-decoration:none" class="button-15" method ="post" role="button">Knn</a></button></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Multi%20Labels/rfm.html"   style="text-decoration:none" class="button-15" method ="post" role="button">Random Forest</a></button></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/Multi%20Labels/dtm.html"   style="text-decoration:none" class="button-15" method ="post" role="button">Decision Tree</a></button></li>
+                    <li><a href=""   style="text-decoration:none" class="button-15" method="get" role="button"> Linear Regression</a></li><br/>
+                    <li><a href=""  style="text-decoration:none" class="button-15" method ="post" role="button" >Logistic Regression</a></li><br/>
+                    <li><a href="" style="text-decoration:none" class="button-15" method ="post" role="button">LSVM</a></button></li><br/>
+                    <li><a href=""  style="text-decoration:none" class="button-15" method ="post" role="button">Knn</a></button></li><br/>
+                    <li><a href=""   style="text-decoration:none" class="button-15" method ="post" role="button">Random Forest</a></button></li><br/>
+                    <li><a href=""   style="text-decoration:none" class="button-15" method ="post" role="button">Decision Tree</a></button></li>
                 </ul>
             </div>
             <div class="box">
                 <h2 class="center">Results</h2>
                 <ul>
-                    <li><a href="http://0.0.0.0:5500/templates/results/lr_bin_result.html"   style="text-decoration:none" class="button-15" method="get" role="button"> Linear Regression</a></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/results/logr_bin_results.html"  style="text-decoration:none" class="button-15" method ="post" role="button" >Logistic Regression</a></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/results/lvsm_bin_results.html" style="text-decoration:none" class="button-15" method ="post" role="button">LSVM</a></button></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/results/knn_bin_results.html"  style="text-decoration:none" class="button-15" method ="post" role="button">Knn</a></button></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/results/rf_bin_results.html"   style="text-decoration:none" class="button-15" method ="post" role="button">Random Forest</a></button></li><br/>
-                    <li><a href="http://0.0.0.0:5500/templates/results/dt_bin_results.html"   style="text-decoration:none" class="button-15" method ="post" role="button">Decision Tree</a></button></li>
+                    <li><a href=""   style="text-decoration:none" class="button-15" method="get" role="button"> Linear Regression</a></li><br/>
+                    <li><a href=""  style="text-decoration:none" class="button-15" method ="post" role="button" >Logistic Regression</a></li><br/>
+                    <li><a href="" style="text-decoration:none" class="button-15" method ="post" role="button">LSVM</a></button></li><br/>
+                    <li><a href=""  style="text-decoration:none" class="button-15" method ="post" role="button">Knn</a></button></li><br/>
+                    <li><a href=""   style="text-decoration:none" class="button-15" method ="post" role="button">Random Forest</a></button></li><br/>
+                    <li><a href=""   style="text-decoration:none" class="button-15" method ="post" role="button">Decision Tree</a></button></li>
                 </ul>
             </div>
         </div>

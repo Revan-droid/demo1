@@ -1,0 +1,9 @@
+<head>
+{% load static %}
+<link rel="stylesheet" href='{% static "home7.css"%}' type="text/css">
+</head>
+{% csrf_token %}
+<body>
+<h1 align:"center">Correlation matrix for multi labels</h1>
+<img src='{% static "images/correlation_matrix_multi.png" %}'>
+</body>

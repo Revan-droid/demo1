@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-h88csb^bj$3mmm+66&-ey$(56al@_(k&(7=q7yni2ui1fz-q@o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['54.215.85.165','127.0.0.1','127.0.0.1:5500']
+ALLOWED_HOSTS = [' 54.193.217.163','127.0.0.1','127.0.0.1:5500']
 
 
 # Application definition
@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "apple"
+    "tailwind",
+    
+    "theme",
+    "django_browser_reload",
+    "apple",
 ]
 
 MIDDLEWARE = [
@@ -52,6 +56,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "MLProject.urls"
@@ -124,7 +129,17 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+TAILWIND_APP_NAME='theme'
+
+
+INTERNAL_IPS =[
+    "127.0.0.1",
+]
+
+NPM_BIN_Path =r"C:\Program Files\nodejs\npm.cmd"

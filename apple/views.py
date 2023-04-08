@@ -13,6 +13,8 @@ loaded_lr_model = joblib.load("ML_models/rf_bin.joblib")
 # Create your views here.
 @login_required(login_url='login')
 def HomePage(request):
+    if(request.method == 'POST'):
+        return render (request,'classified2.html')
     return render (request,'home.html')
 
 def ResultsPage(request):
@@ -89,3 +91,33 @@ def LoginPage(request):
 def LogoutPage(request):
     logout(request)
     return redirect('login')
+
+def classified2(request):
+    return render (request,'Analysis Of Dataset/classified2.html')
+
+def classifiedmul(request):
+    return render (request,'Analysis Of Dataset/classifiedmul.html')
+
+def correlation2(request):
+    return render (request,'Analysis Of Dataset/correlation2.html')
+
+def correlationmul(request):
+    return render (request,'Analysis Of Dataset/correlationmul.html')
+
+def dt(request):
+    return render (request,'Binary Labels/dt.html')
+
+def knn(request):
+    return render (request ,'Binary Labels/knn.html')
+
+def lg(request):
+    return render(request ,'Binary Labels/lg.html')
+
+def lrg(request):
+    return render(request,'Binary Labels/lrg.html')
+
+def lvsm(request):
+    return render(request,'Binary Labels/lvsm.html')
+
+def rf(request):
+    return render(request,'Binary Labels/rf.html')

@@ -1,0 +1,9 @@
+<head>
+{% load static %}
+<link rel="stylesheet" href='{% static "home7.css"%}' type="text/css">
+</head>
+{% csrf_token %}
+<h1 align:"center">Correlation matrix for binary labels</h1>
+<body>
+<img src='{% static "images/correlation_matrix_bin.png" %}'>
+</body>
