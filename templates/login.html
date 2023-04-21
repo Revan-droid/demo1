@@ -1,63 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static tailwind_tags %}
 {% load static %}
 <head>
-  <!-- Design by foolishdeveloper.com -->
     <title>Login Page</title>
- 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href='{% static "home1.css"%}' type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, intial-scale=1"/>
     <!--Stylesheet-->
-
-<style>
-.bg {
-    position: fixed; 
-    top: -50%; 
-    left: -50%; 
-    width: 200%; 
-    height: 200%;
-  }
-  .bg img {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    margin: auto; 
-    min-width: 50%;
-    min-height: 50%;
-  }</style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    
-    <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
+<script src="https://cdn.tailwindcss.com"></script>
+{% tailwind_css %}
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Style a responsive navbar component with Tailwind CSS</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />     
+  </head>
+  <body>
+    <nav class="flex flex-wrap items-center justify-between p-3 bg-black rounded-l-lg rounded-r-lg">  
+        <div class="flex md:hidden">
+          <button id="hamburger">
+            <img class="toggle block bg-white" src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png" width="40" height="40" />
+            <img class="toggle hidden bg-white" src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png" width="40" height="40" />
+          </button>
+        </div>      
+        <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
+          <a href="#login" class="block md:inline-block text-white hover:text-blue-700 px-3 py-3 border-b-2">Home</a>
+        </div>
+        <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
+          <a href="#footer" class="block md:inline-block text-white hover:text-blue-700 px-3 py-3 border-b-2">About</a>
+        </div>    
+           
+        <a href="{% url 'signup' %}" class="toggle hidden md:flex w-full md:w-auto px-4 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white md:rounded my-3">Sign Up</a>
+    </nav> 
+      <script>
+        document.getElementById("hamburger").onclick = function toggleMenu() {
+          const navToggle = document.getElementsByClassName("toggle");
+          for (let i = 0; i < navToggle.length; i++) {
+            navToggle.item(i).classList.toggle("hidden");
+          }
+        };
+      </script>     
+    </body>
+  </html>
+  <section class="gradient-form h-full" id="login">
+    <div class="container h-full p-5">
+      <div
+        class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+        <div class="w-full">
+          <div
+            class="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
+            <div class="g-0 lg:flex lg:flex-wrap">
+              <!-- Left column container-->
+              
+  
+              <!-- Right column container with background and description-->
+              <div
+                class="flex items-center lg:w-6/12 lg:rounded-l-lg lg:rounded-r-lg"
+                style="background: linear-gradient(to right, #5056c2,#d5b2de,#d196ce,#5056c2)">
+                <div class="px-4 py-6 text-white md:mx-6 md:p-12">
+                  <img
+                      class="mx-auto w-400"
+                      src='{% static "images/logo7.jpg" %}'
+                      alt="logo" />
+                  <h4 class="mb-12 mt-1 pb-1 text-xl text-black font-semibold text-center">
+                    IDS USING MACHINE LEARNING
+                  </h4>
+                </div>
+                
+              </div>
+              <div class="px-4 md:px-0 lg:w-6/12 lg:rounded-l-lg lg:rounded-r-lg bg-stone-100">
+                <div class="md:mx-6 md:p-12 ">
+                  <!--Logo-->
+                  <div class="text-center">
+                    <img
+                      class="mx-auto my-auto w-40 h-30 pt-3"
+                      src='{% static "images/logo4.jpg"%}'
+                      alt="logo" />
+                    <h4 class="mb-12 mt-1 pb-1 text-2xl font-semibold">
+                      Intrusion Dection System
+                    </h4>
+                  </div>
+  
+                  <form method="post">
+                    {% csrf_token %} 
+                    <p class="mb-4 font-bold">Please login to your account</p>
+                    <!--Username input-->
+                    <div class="relative mb-4 font-bold" data-te-input-wrapper-init>
+                      <label for="username">Username</label>
+                      <input
+                        type="text"
+                        id="username" 
+                        name="username"
+                        class="peer block min-h-[auto] w-full bg-transparent font-bold px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 lg:rounded-l-lg lg:rounded-r-lg"
+                        placeholder="Username" />
+                        
+                    </div>
+  
+                    <!--Password input-->
+                    <div class="relative mb-4 font-bold" data-te-input-wrapper-init>
+                      <label for="password">Password</label>
+                      <input
+                        type="password"
+                        id="password" 
+                        name="pass"
+                        class="peer block min-h-[auto]  w-full bg-transparent font-bold px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 lg:rounded-l-lg lg:rounded-r-lg"
+                        placeholder="Password" />
+                    </div>
+  
+                    <!--Submit button-->
+                    <div class="mb-12 pb-1 pt-1 text-center">
+                      <button
+                        class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] bg-black"
+                        data-te-ripple-init
+                        data-te-ripple-color="light"
+                         type="submit">
+                        Log in
+                      </button>
+                    </div>
+  
+                    <!--Register button-->
+                    <div class="flex items-center justify-between pb-6 font-bold">
+                      <p class="mb-0 mr-2 font-bold">Don't have an account?</p>
+                      <a
+                        type="submit"
+                        class="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-bold uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+                        data-te-ripple-init
+                        data-te-ripple-color="light"
+                        href="{% url 'signup' %}">
+                        SignUp
+                    </a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="bg">
-        <img src='{% static "images/logo4.jpg"%}' alt="Logo">
-    </div> 
+  </section>
+<!--Footer container-->
+<footer
+class="text-center text-white" id="footer">
 
-    <form method="post">
-        <h2>      Intrusion Detection System</h2>
-        <h3>Login Here</h3>
-        {% csrf_token %} 
-        <label for="username">Username</label>
-        <input type="text" placeholder="Enter Username" id="username" name="username">
-
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password" name="pass">
-      
-        <button type="submit">Log In</button>
-        <!-- <input type="button" value=""> -->
-        <!-- <div class="social">
-          <div class="go"><i class="fab fa-google"></i>  Google</div>
-          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-        </div> -->
-        <a href="{% url 'signup' %}" >Create a account</a>
- 
-    </form>
+</footer>
+<div
+    class="bg-black text-center p-5 text-white  rounded-l-lg rounded-r-lg"
+    >
+    <a class="text-whitehite" href="https://tailwind-elements.com/"
+      >Developed by Durga Revanth and Rama Krishna</a>
+  </div>
 </body>
 </html>

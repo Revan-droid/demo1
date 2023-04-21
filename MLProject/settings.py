@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-h88csb^bj$3mmm+66&-ey$(56al@_(k&(7=q7yni2ui1fz-q@o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['54.193.217.163']
+ALLOWED_HOSTS = ['54.193.217.163','127.0.0.1']
 
 
 # Application definition
@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "apple",
+    "tailwind",
+    "hi",
+    "django_browser_reload",
+    "compressor",
 ]
 
 MIDDLEWARE = [
@@ -131,11 +135,6 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-TAILWIND_APP_NAME='theme'
+TAILWIND_APP_NAME='hi'
 
-
-INTERNAL_IPS =[
-    "127.0.0.1",
-]
-
-NPM_BIN_Path =r"C:\Program Files\nodejs\npm.cmd"
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"

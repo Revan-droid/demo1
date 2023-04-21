@@ -1,65 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% load static tailwind_tags %}
 <head>
   <!-- Design by foolishdeveloper.com -->
     <title>Signup Page</title>
     <meta name="viewport" content="width=device-width, intial-scale=1"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href='{% static "home2.css"%}' type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <!--Stylesheet-->
-    <style>
-    .bg {
-    position: fixed; 
-    top: -50%; 
-    left: -50%; 
-    width: 200%; 
-    height: 200%;
-  }
-  .bg img {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    margin: auto; 
-    min-width: 50%;
-    min-height: 50%;
-  }
-    </style>
 </head>
 <body>
-    <div class="bg">
-        <img src='{% static "images/logo2.jpg"%}' alt="Logo">
-    </div> 
-    <h1>Create An Account For IDS</h1>
-    <div class="background">
-        <div class="shape"></div>
-        
-        <div class="shape"></div>
+<script src="https://cdn.tailwindcss.com"></script>
+{% tailwind_css %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Style a responsive navbar component with Tailwind CSS</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />     
+</head>
+<body>
+  <nav class="flex flex-wrap items-center justify-between p-3 bg-neutral-800 rounded-l-lg rounded-r-lg">  
+    <div class="flex md:hidden">
+      <button id="hamburger">
+        <img class="toggle block bg-white" src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png" width="40" height="40" />
+        <img class="toggle hidden" src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png" width="40" height="40" />
+      </button>
+    </div>      
+    <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
+      <a href="#signup" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">Home</a>
     </div>
-    <form action="" method="post">
-        {% csrf_token %} 
-        
-        <h3>Signup Here</h3>
+    <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
+      <a href="#footer" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">About</a>
+    </div>      
+      <a href="{% url 'login' %}" class="toggle hidden md:flex w-full md:w-auto px-4 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white my-3 md:rounded">Log In</a>
+  </nav> 
+<script>
+  document.getElementById("hamburger").onclick = function toggleMenu() {
+    const navToggle = document.getElementsByClassName("toggle");
+      for (let i = 0; i < navToggle.length; i++) {
+      navToggle.item(i).classList.toggle("hidden");
+                                                 }
+      };
+</script>     
+  </body>
+</html>
+    <div class="flex justify-center items-center h-50 bg-blue-200" id="signup">
+    <div id="form" class="p-6 rounded-xl shodow-md bg-pink-50 w-90" >
+        <h1 class="text-black text-3xl font-semibold my-4 text-center">Create An Account For IDS</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <h2 class="text-black text-3xl font-semibold my-4 text-center">Signup Here</h2>
+            <!-- full name -->
+            <label for="username" class="text-sm">Username</label><br>
+            <input type="text"  name="username" id="username"
+                class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-blue-600 shadow-sm">
+            <!-- email -->
+            <label for="email" class="text-sm">Email</label><br>
+            <input type="email" name="email" id="email"
+                class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-blue-600 shadow-sm">
+            <!-- password -->
+            <label for="password1" class="text-sm">Password</label><br>
+            <input type="password" name="password1" id="password1"
+                class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-blue-600 shadow-sm">
+            <!-- confirm password -->
+            <label for="password2" class="text-sm">Confirm Password</label><br>
+            <input type="password" name="password2" id="password2"
+                class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-blue-600 shadow-sm">
+            <!-- Sign up / submit button -->
+            <input type="submit" name="" id="signUp"
+                class="bg-blue-700 w-full h-10 cursor-pointer my-3 text-white font-bold rounded-lg hover:bg-green-600 hover:outline outline-2 outline-green-700 outline-offset-2 text-sm"><br>
+            <p class="text-xs my-2">Already have a account? <a href="{% url 'login' %}" class="text-blue-600">Login</a></p>
+        </form>
+    </div>
+</div>
+<!--Footer container-->
+<!--Footer container-->
+<footer class="bg-stone-800 text-center text-white rounded-l-lg rounded-r-lg" id="footer">
+  <div class="container px-6 pt-6">
+    <div class="mb-6 flex justify-center">
+      <a
+        href="https://www.google.com/"
+        type="button"
+        class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+        data-te-ripple-init
+        data-te-ripple-color="light">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="mx-auto h-full w-4"
+          fill="currentColor"
+          viewBox="0 0 24 24">
+          <path
+            d="M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z"
+            fill-rule="evenodd"
+            clip-rule="evenodd" />
+        </svg>
+      </a>
+  
+      <a
+        href="https://www.linkedin.com/in/palacharla-rama-krishna-33a44a218/"
+        type="button"
+        class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+        data-te-ripple-init
+        data-te-ripple-color="light">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="mx-auto h-full w-4"
+          fill="currentColor"
+          viewBox="0 0 24 24">
+          <path
+            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+        </svg>
+      </a>
 
-        <label for="username">Username</label>
-        <input type="text" placeholder="Username" name="username" id="username">
+      <a
+        href="https://github.com/Revan-droid/MLProject2"
+        type="button"
+        class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+        data-te-ripple-init
+        data-te-ripple-color="light">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="mx-auto h-full w-4"
+          fill="currentColor"
+          viewBox="0 0 24 24">
+          <path
+            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg>
+      </a>
+    </div>
+  </div>
 
-        <label for="email">Email</label>
-        <input type="email" placeholder="Email or Phone" name="email" id="email">
-
-        <label for="password1">Password</label>
-        <input type="password" placeholder="Password" id="password1" name="password1">
-
-
-        <label for="password2">Confirm Password</label>
-        <input type="password" placeholder="Confirm Password" id="password2" name="password2">
-        <button type="submit">Signup</button>
-        
-        <a href="{% url 'login' %}">I have already account</a>
-    </form>
+  <!--Copyright section-->
+  <div
+    class="p-4 text-center  rounded-l-lg rounded-r-lg"
+    style="background-color: rgba(0, 0, 0, 0.2)">
+    <a class="text-whitehite" href=""
+      >Developed by Durga Revanth and Rama Krishna</a>
+  </div>
+</footer>
+</div>
 </body>
 </html>
