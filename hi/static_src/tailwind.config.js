@@ -10,7 +10,6 @@ module.exports = {
         /**
          * HTML. Paths to Django template files that will contain Tailwind CSS classes.
          */
-        'node_modules/preline/dist/*.js',
         /*  Templates within theme app (<tailwind_app_name>/templates), e.g. base.html. */
         '../templates/**/*.html',
 
@@ -55,7 +54,6 @@ module.exports = {
         require('@tailwindcss/typography'),
         require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
-        require('preline/plugin'),
     ],
 }
 

@@ -7,13 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Intrusion Detection System</title>    
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
 </head>
 <body class="bg-pink-50">
 {% csrf_token %} 
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
 {% tailwind_css %}
 <!DOCTYPE html>
 <html lang="en">
@@ -39,10 +37,10 @@
         <a href="#analyseddata" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">Analysed Data</a>
     </div> 
     <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
-        <a href="#about" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">About</a>
+        <a href="#Work Flow" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">Work Flow</a>
     </div>
     <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
-        <a href="#client-section" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">Work Flow</a>
+        <a href="#about" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">About</a>
     </div> 
       <a href="{% url 'logout' %}" class="toggle hidden md:flex w-full md:w-auto px-4 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white my-3 md:rounded">Log out</a>
   </nav> 
@@ -56,50 +54,51 @@
   </script>     
 </body>
 </html>
-<html>
+<!DOCTYPE html>
+<head>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body>
+  <script src="https://cdn.tailwindcss.com"></script>
   <section class="mt-12 mx-5">
     <h2 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg mb-7" >National security always matters, obviously. But the reality is <br/> that if you have an open door in your software for the <br/> good guys, the bad guys get in there, too. </h2>
     <h3 class="text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg text-center mb-10">-Tim Cook</h3>
     <p class="text-3xl font-thin leading-none text-primary rounded-l-lg rounded-r-lg text-center no-underline hover:underline mb-3"><a href="#form">A portal to check intrusion</a></p>
   </section>
   <br/>
-  <section class="py-20 mt-28 p-20">
+  <section class="py-20 mt-28 p-10">
     <!-- Heading -->
     <div class="sm:w-full lg:w-full mx-auto px-2"  id="form">
       <h1 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg mb-7">Predict Your Intrusion Now</h1>
       <h3 class="text-center text-2xl text-bookmark-grey mt-4">
-        Fill the following details of your data packet to Predict the intrusion on your computer.
+        Fill the following details of your data packet <br/>to Predict the intrusion on your computer.
       </h3>
     </div>
     <!-- Cards -->
 <form action="results/" method="post">
 {% csrf_token %}
-<div class="container grid grid-cols-0 xl:grid-cols-4 gap-16 max-w-screen-2xl mt-16">
-<!-- Card 1 -->
-  <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-violet-200">
-    <div class="pt-10 flex flex-col items-center">      
-         <button id="dropdownRadioHelperButton" data-dropdown-toggle="dropdownRadioHelper" class="text-white bg-black hover:bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-         <!-- Dropdown menu -->
-           <div id="dropdownRadioHelper" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-60 dark:bg-gray-700 dark:divide-gray-600">
-            <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioHelperButton">
-             <li>
-              <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                <div class="flex items-center h-5"> 
-                <input id="helper-radio-4" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-              </div>
-              <div class="ml-2 text-sm">
+<div class="container grid grid-cols-1 xl:grid-cols-4 gap-16 max-w-screen-2xl mt-16">
+      <!-- Card 1 -->
+      <div class="flex flex-col w-full rounded-md shadow-md xl:mb-16 bg-purple-200">
+        <div class="p-10 flex flex-col items-center">
+                
+          <button id="dropdownHelperButton" data-dropdown-toggle="dropdownHelper" class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown checkbox <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+
+<!-- Dropdown menu -->
+<div id="dropdownHelper" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-60 dark:bg-gray-700 dark:divide-gray-600">
+    <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioHelperButton">
+      <li>
+        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+          <div class="ml-2 text-sm">
               <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
                 <div>Rate</div>
-                <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">The data rate is the number of bits transmitted from one device to another or over a network per second</p>
+                <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">The data rate is the number of bits transmitted from one device to another or over a network per second.</p>
               </label>
-              </div>
-              </div>
-            </li>
-            <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="flex items-center h-5">
-              <input id="helper-radio-5" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
           </div>
+        </div>
+      </li>
+      <li>
+        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
           <div class="ml-2 text-sm">
               <label for="helper-radio-5" class="font-medium text-gray-900 dark:text-gray-300">
                 <div>STTL</div>
@@ -110,60 +109,49 @@
       </li>
       <li>
         <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="flex items-center h-5">
-              <input id="helper-radio-6" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-          </div>
           <div class="ml-2 text-sm">
               <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
                 <div>SLOAD</div>
-                <p id="helper-radio-text-6" class="text-xs font-normal text-gray-500 dark:text-gray-300">Source bits per second</p>
+                <p id="helper-radio-text-6" class="text-xs font-normal text-gray-500 dark:text-gray-300">Source bits per second.</p>
               </label>
           </div>
         </div>
       </li>
       <li>
         <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="flex items-center h-5">
-              <input id="helper-radio-4" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-          </div>
           <div class="ml-2 text-sm">
-              <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
+              <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
                 <div>DLOAD</div>
-                <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">Destination bits per second</p>
+                <p id="helper-radio-text-6" class="text-xs font-normal text-gray-500 dark:text-gray-300">Destination bits per second.</p>
               </label>
           </div>
         </div>
       </li>
       <li>
         <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="flex items-center h-5">
-              <input id="helper-radio-4" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-          </div>
           <div class="ml-2 text-sm">
-              <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
+              <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
                 <div>CT_SRV_SRC</div>
-                <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same service and same Source address in 100 connections according to last time.</p>
+                <p id="helper-radio-text-6" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same service and same Source address in 100 connections according to last time.</p>
               </label>
           </div>
         </div>
       </li>
       <li>
-      <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-        <div class="flex items-center h-5">
-            <input id="helper-radio-4" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+          <div class="ml-2 text-sm">
+              <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
+                <div>CT_STATE_TTL</div>
+                <p id="helper-radio-text-6" class="text-xs font-normal text-gray-500 dark:text-gray-300">No. for each state according to specific range of values for source/destination to live.</p>
+              </label>
+          </div>
         </div>
-        <div class="ml-2 text-sm">
-            <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
-              <div>CT_STATE_TTL</div>
-              <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Destination address in 100 Connections according to last time</p>
-            </label>
+      </li>
+    </ul>
+</div>
+
         </div>
       </div>
-    </li>
-    </ul>
-</div>        
-</div>
-</div>
       <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-white">
         <div class="p-10 flex flex-col items-center">
                 <div class="form-group text-center">
@@ -241,281 +229,225 @@
         <label for="state_CON" class="font-bold">state_CON: </label><br>
         <input type="Number" name="state_CON" id="state_CON" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
         class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-    </div>
-    <div class="form-group text-center">
+      </div>
+      <div class="form-group text-center">
         <label for="state_INT" class="font-bold">state_INT: </label><br>
         <input type="Number" name="state_INT" id="state_INT" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
         class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
+      </div>
+     </div>
     </div>
-  </div>
-</div>
-<div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-violet-200">
-  <div class="p-10 flex flex-col items-center">      
-    <button id="dropdownRadioHelperButton" data-dropdown-toggle="dropdownRadioHelper" class="text-white bg-black hover:bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+    <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-purple-200">
+      <div class="p-10 flex flex-col items-center">
+        
+<button id="dropdownToggleButton" data-dropdown-toggle="dropdownToggle" class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown toggle <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+
 <!-- Dropdown menu -->
-<div id="dropdownRadioHelper" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-60 dark:bg-gray-700 dark:divide-gray-600">
-    <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioHelperButton">
+<div id="dropdownToggle" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-72 dark:bg-gray-700 dark:divide-gray-600">
+    <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownToggleButton">
       <li>
         <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="flex items-center h-5">
-              <input id="helper-radio-4" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-          </div>
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>CT_SRC_DPORT_LTM</div>
-                <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Source address and Destination Port in 100 Connections according to last time.</p>
-              </label>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="flex items-center h-5">
-              <input id="helper-radio-5" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-          </div>
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-5" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>CT_DST_SPORT_LTM</div>
-                <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Destination address and Source Port in 100 Connections according to last time.</p>
-              </label>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="flex items-center h-5">
-              <input id="helper-radio-6" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-          </div>
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>CT_DST_SRC_LTM</div>
-                <p id="helper-radio-text-6" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Source address and Destination addressin 100 Connections according to last time.</p>
-              </label>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="flex items-center h-5">
-              <input id="helper-radio-4" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-          </div>
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>DLOAD</div>
-                <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">Destination bits per second</p>
-              </label>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="flex items-center h-5">
-              <input id="helper-radio-4" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-          </div>
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>CT_SRV_SRC</div>
-                <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same service and same Source address in 100 connections according to last time.</p>
-              </label>
-          </div>
-        </div>
-      </li>
-      <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-        <div class="flex items-center h-5">
-            <input id="helper-radio-4" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-        </div>
-        <div class="ml-2 text-sm">
-            <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
-              <div>CT_STATE_TTL</div>
-              <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Destination address in 100 Connections according to last time</p>
-            </label>
-        </div>
-      </div>
-    </li>
-    <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-      <div class="flex items-center h-5">
-          <input id="helper-radio-4" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-      </div>
-      <div class="ml-2 text-sm">
-          <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
-            <div>CT_SRV_SRC</div>
-            <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same service and same Source address in 100 connections according to last time.</p>
+           <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
+              <div>CT_DST_LTM</div>
+            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Destination address in 100 Connections according to last time.</p>
           </label>
+        </div>
+      </li>
+      <li>
+        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+          <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
+            <div>CT_SRC_DPORT_LTM</div>
+            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Source address and Destination Port in 100 Connections according to last time.</p>
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+          <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
+            <div>CT_DST_SPORT_LTM</div>
+            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Destination address and Source Port in 100 Connections according to last time.</p>
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+          <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
+            <div>CT_DST_SRC_LTM</div>
+            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Source address and Destination addressin 100 Connections according to last time.</p>
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+          <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
+            <div>CT_SRC_LTM</div>
+            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the Same Source address in 100 Connections according to last time.</p>
+          </label>
+        </div>
+      </li>
+      <li>
+        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+          <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
+            <div>CT_SRV_DST</div>
+            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the Same Service and Destination address in 100 connections according to last time.</p>
+          </label>
+        </div>
+      </li>
+    </ul>
+</div>
+
       </div>
-    </div>
-  </li>
-</ul>
-</div>   
-    </div>
-    </div>
-      <!-- Card 3 -->
-  </div>
-  <div class="flex flex-col justify-center items-center m">
-    <div class="form-group">
-      <input type="submit" class="toggle md:flex w-full md:w-auto px-4 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white my-3 md:rounded">
-    </div>
-  </div>
-</form>
+      </div>
+<!-- Card 3 -->
+</div>
+     <div class="flex flex-col justify-center items-center m">
+       <div class="form-group">
+           <input type="submit" class="toggle md:flex w-full md:w-auto px-4 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white my-3 md:rounded">
+      </div>
+     </div>
+ </form>
 
 <a href="#home" style="text-decoration:none" class="toggle w-30 px-3 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Back To Top</a>
 <a href="#analyseddata" style="text-decoration:none" class="toggle w-30 px-3 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Next Page</a>
 </section>
 
 <section class="py-20 mt-0 p-10 ">
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 <h1 class="text-center text-4xl font-extrabold text-black mb-10 italic" id="analyseddata">Analysed Data</h1>
 <div class="container grid grid-cols-1 xl:grid-cols-4 gap-16 max-w-screen-2xl">
   <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-slate-700">
     <div class="p-10 flex flex-col items-center">      
-            <h1 class="text-center text-3xl text-red-300 mb-5 italic">Analysis of Dataset</h1><br/>
-            <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown hover <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+      <h1 class="text-center text-3xl text-red-300 mb-5 italic">Analysis of Dataset</h1><br/>
+      <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"> Dropdown <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
       <!-- Dropdown menu -->
       <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
           <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
             <li>
-              <a href="{% url 'classified2' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Binary classification</a>
+              <a href="{% url 'classified2' %}" class="block px-4 py-2   hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Binary classification</a>
             </li>
             <li>
-              <a href="{% url 'classifiedmul' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Multi classification</a>
+              <a href="{% url 'classifiedmul' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Multi classification</a>
             </li>
             <li>
-              <a href="{% url 'correlation2' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Correlation matrix for binary labels</a>
+              <a href="{% url 'correlation2' %}" class="block px-4 py-2    hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Correlation matrix for binary labels</a>
             </li>
             <li>
-              <a href="{% url 'correlationmul' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Correlation matrix for multi labels</a>
+              <a href="{% url 'correlationmul' %}" class="block px-4 py-2    hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Correlation matrix for multi labels</a>
             </li>
           </ul>
       </div>   
 </div>
 </div>
 <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-slate-700">
-<div class="p-10 flex flex-col items-center">      
-    <h1 class="text-center text-3xl text-red-300 mb-14 italic">Binary Label</h1><br/>  
-<button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown hover <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+  <div class="p-10 flex flex-col items-center"> 
+    <h1 class="text-center text-3xl text-red-300 mb-14 italic">Binary Label</h1><br/>
+    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button" data-dropdown-toggle="dropdown"> Binary Label <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
 <!-- Dropdown menu -->
-<div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+<div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
+  
+  <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown">
+    <li>
+      <a href="{% url 'lg' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Linear Regression </a>
+    </li>
+    <li>
+      <a href="{% url 'lrg' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Logistic Regression </a>
+    </li>
+    <li>
+      <a href="{% url 'lvsm' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> LSVM </a>
+    </li>
+    <li>
+      <a href="{% url 'knn' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> KNN </a>
+    </li>
+    <li>
+      <a href="{% url 'rf' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Random Forest </a>
+    </li>
+    <li>
+      <a href="{% url 'dt' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Decision Tree </a>
+    </li>
+  </ul>
+</div>
+</div>
+</div> 
+
+<div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-slate-700">
+  <div class="p-10 flex flex-col items-center"> 
+    <h1 class="text-center text-3xl text-red-300 mb-14 italic">Multi Label</h1><br/>
+    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button" data-dropdown-toggle="dropdown"> Multi Label <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+<!-- Dropdown menu -->
+<div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
+  
+  <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown">
+    <li>
+      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Linear Regression </a>
+    </li>
+    <li>
+      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Logistic Regression </a>
+    </li>
+    <li>
+      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> LSVM </a>
+    </li>
+    <li>
+      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> KNN </a>
+    </li>
+    <li>
+      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Random Forest </a>
+    </li>
+    <li>
+      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Decision Tree </a>
+    </li>
+  </ul>
+</div>
+</div>
+</div>  
+  <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-slate-700">
+    <div class="p-10 flex flex-col items-center"> 
+      <h1 class="text-center text-3xl text-red-300 mb-14 italic">Results</h1><br/>
+      <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button" data-dropdown-toggle="dropdown"> Results <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+<!-- Dropdown menu -->
+<div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
+    
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown">
       <li>
-        <a href="{% url 'lg' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Linear Regression</a>
+        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Linear Regression </a>
       </li>
       <li>
-        <a href="{% url 'lrg' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logistic Regression</a>
+        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Logistic Regression </a>
       </li>
       <li>
-        <a href="{% url 'lvsm' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">LSVM</a>
+        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> LSVM </a>
       </li>
       <li>
-        <a href="{% url 'knn' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Knn</a>
+        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> KNN </a>
       </li>
       <li>
-        <a href="{% url 'rf' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Random Forest</a>
+        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Random Forest </a>
       </li>
       <li>
-        <a href="{% url 'dt' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Decision Tree</a>
+        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Decision Tree </a>
       </li>
     </ul>
 </div>
 </div>
-</div>
-<div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-slate-700">
-  <div class="p-10 flex flex-col items-center">      
-    <h1 class="text-center text-3xl text-red-300 mb-14 italic" >Multi Label</h1>
-      <br/>
-      <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown hover <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-      <!-- Dropdown menu -->
-      <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-            <li>
-              <a href="{% url 'lg' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Linear Regression</a>
-            </li>
-            <li>
-              <a href="{% url 'lrg' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logistic Regression</a>
-            </li>
-            <li>
-              <a href="{% url 'lvsm' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">LSVM</a>
-            </li>
-            <li>
-              <a href="{% url 'knn' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Knn</a>
-            </li>
-            <li>
-              <a href="{% url 'rf' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Random Forest</a>
-            </li>
-            <li>
-              <a href="{% url 'dt' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Decision Tree</a>
-            </li>
-          </ul>
-      </div>
-  </div>
-  </div>
-  <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-slate-700">
-    <div class="p-10 flex flex-col items-center"> 
-             <h1 class="text-center text-3xl text-red-300 mb-14 italic">Results</h1><br/>
-             <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown hover <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-      <!-- Dropdown menu -->
-      <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-            <li>
-              <a href="{% url 'lg' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Linear Regression</a>
-            </li>
-            <li>
-              <a href="{% url 'lrg' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logistic Regression</a>
-            </li>
-            <li>
-              <a href="{% url 'lvsm' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">LSVM</a>
-            </li>
-            <li>
-              <a href="{% url 'knn' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Knn</a>
-            </li>
-            <li>
-              <a href="{% url 'rf' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Random Forest</a>
-            </li>
-            <li>
-              <a href="{% url 'dt' %}" class="block px-4 py-2  method ="post" role="button" hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Decision Tree</a>
-            </li>
-          </ul>
-      </div>
-    </div>
-  </div>  
+</div>         
 </div>
 <div class="mt-5">
 <a href="#home" style="text-decoration:none" class="toggle w-30 px-3 py-2 mr-15 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Back To Top</a>
-<a href="#about" style="text-decoration:none" class="toggle w-30 px-3 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Next Page</a>
+<a href="#Work Flow" style="text-decoration:none" class="toggle w-30 px-3 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Next Page</a>
 </div>
 </section>
-<section class="py-20 mt-0 p-10 ">
-<h3 class="mb-2 mt-0 text-3xl w-auto font-medium leading-tight text-primary text-center bg-neutral-800 text-white mx-0 rounded-l-lg rounded-r-lg" id="about">Techonolgies Used In Development</h3>
-<div class="container p-6">
-  <div class="grid gap-4 md:grid-cols-3 lg:grid-cols-5">
-    <div class="mb-5 lg:mb-0">
-      <img
-        src="https://i2.wp.com/softwareengineeringdaily.com/wp-content/uploads/2018/07/jupyter-logo-featured-image.png?fit=600%2C315&ssl=1"
-        class="w-full h-36 rounded-md shadow-lg" />
-    </div>
-    <div class="mb-5 lg:mb-0">
-      <img
-        src="https://www.imensosoftware.com/wp-content/uploads/2019/06/django-1.png"
-        class="w-full h-36 rounded-md shadow-lg" />
-    </div>
-    <div class="mb-5 lg:mb-0">
-      <img
-        src="https://getlogovector.com/wp-content/uploads/2021/01/tailwind-css-logo-vector.png"
-        class="w-full h-36 rounded-md shadow-lg" />
-    </div>
-    <div class="mb-5 lg:mb-0">
-      <img
-        src="https://lthub.ubc.ca/files/2021/06/GitHub-Logo.png"
-        class="w-full h-36 rounded-md shadow-lg" />
-    </div>
-    <div class="mb-5 lg:mb-0">
-      <img
-        src="https://mobisoftinfotech.com/resources/wp-content/uploads/2016/11/How-to-launch-an-AWS-EC2-server-and-set-up-Ubuntu-16.04-on-it.jpg"
-        class="w-full h-36 rounded-md shadow-lg" />
-    </div>
-</section>
-<footer class="bg-stone-800 text-center text-white my-5 rounded-l-lg rounded-r-lg" id="footer">
-  <div class="container px-6 pt-6">
-    <div class="mb-6 flex justify-center">
 
+<section class="py-20 mt-0 p-10" id="Work Flow">
+  <h1 class="text-center text-4xl font-extrabold text-black mb-10 italic">Work Flow</h1>
+  <div class="text-3xl p-3">
+    <div class="p-5">Collecting Raw Network Packets ➤ Preparing Data Set ➤ Data Pre Processing ➤ Data Normalization ➤ 
+        <h1 class="text-center">Data Splitting ➤Train The Model ➤ Evaluate the accuracy, precision, recall and f1 score ➤ </h1> 
+        <h1 class="text-center">Created a Web App using Django framework.</h1></b><div>
+  </div>
+</section>
+
+<footer class="bg-stone-800 text-center text-white mx-5 my-5 rounded-l-lg rounded-r-lg" id="about">
+  <div class="container px-6 pt-6">
+    <h3 class="text-xl w-auto font-medium leading-tight text-primary text-center bg-neutral-800 text-white underline rounded-l-lg rounded-r-lg" id="about">Techonolgies Used In Development</h3><br/>
+    <div class="mb-6 flex justify-center">
       <a
         href="https://www.linkedin.com/in/palacharla-rama-krishna-33a44a218/"
         type="button"
@@ -587,9 +519,9 @@
     class="p-4 text-center rounded-l-lg rounded-r-lg mb-5 bg-black"
     >
     <a class="text-white" href="https://tailwind-elements.com/"
-      >Developed by Revanth and Ramkrishna</a>
+      >Developed by Revanth and Rama Krishna</a>
   </div>
 </footer>
-
-</html>
+<script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+</body>
 </html>

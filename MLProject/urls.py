@@ -21,4 +21,5 @@ urlpatterns = [
     path('lrg/',views.lrg,name='lrg'),
     path('lvsm',views.lvsm,name='lvsm'),
     path('rf/',views.rf,name='rf'),
+    path('lgm/',views.lgm,name='lgm'),
 ]

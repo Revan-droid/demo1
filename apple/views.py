@@ -121,3 +121,6 @@ def lvsm(request):
 
 def rf(request):
     return render(request,'Binary Labels/rf.html')
+
+def lgm(request):
+    return render(request,'Multi Labels/lgm.html')
