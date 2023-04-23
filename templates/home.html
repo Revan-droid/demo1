@@ -61,7 +61,9 @@
 <body>
   <script src="https://cdn.tailwindcss.com"></script>
   <section class="mt-12 mx-5">
-    <h2 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg mb-7" >National security always matters, obviously. But the reality is <br/> that if you have an open door in your software for the <br/> good guys, the bad guys get in there, too. </h2>
+    <div class="md:p-10 mb-7">
+    <h2 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg p-19" >National security always matters, obviously.But the reality is </h2><h2 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg p-19" >that if you have an open door in your software for </h2> <h2 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg mb-7 p-19" >the good guys, the bad guys get in there, too. </h2>
+    </div>
     <h3 class="text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg text-center mb-10">-Tim Cook</h3>
     <p class="text-3xl font-thin leading-none text-primary rounded-l-lg rounded-r-lg text-center no-underline hover:underline mb-3"><a href="#form">A portal to check intrusion</a></p>
   </section>
@@ -82,7 +84,7 @@
       <div class="flex flex-col w-full rounded-md shadow-md xl:mb-16 bg-purple-200">
         <div class="p-10 flex flex-col items-center">
                 
-          <button id="dropdownHelperButton" data-dropdown-toggle="dropdownHelper" class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown checkbox <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+          <button id="dropdownHelperButton" data-dropdown-toggle="dropdownHelper" class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Info Box<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
 
 <!-- Dropdown menu -->
 <div id="dropdownHelper" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-60 dark:bg-gray-700 dark:divide-gray-600">
@@ -240,7 +242,7 @@
     <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-purple-200">
       <div class="p-10 flex flex-col items-center">
         
-<button id="dropdownToggleButton" data-dropdown-toggle="dropdownToggle" class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown toggle <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+<button id="dropdownToggleButton" data-dropdown-toggle="dropdownToggle" class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Info Box<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
 
 <!-- Dropdown menu -->
 <div id="dropdownToggle" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-72 dark:bg-gray-700 dark:divide-gray-600">
@@ -306,9 +308,10 @@
       </div>
      </div>
  </form>
-
+<div class="mt-5 flex items-center justify-center md\:h-10">
 <a href="#home" style="text-decoration:none" class="toggle w-30 px-3 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Back To Top</a>
 <a href="#analyseddata" style="text-decoration:none" class="toggle w-30 px-3 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Next Page</a>
+</div>
 </section>
 
 <section class="py-20 mt-0 p-10 ">
@@ -317,7 +320,7 @@
   <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-slate-700">
     <div class="p-10 flex flex-col items-center">      
       <h1 class="text-center text-3xl text-red-300 mb-5 italic">Analysis of Dataset</h1><br/>
-      <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"> Dropdown <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+      <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"> Analysis <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
       <!-- Dropdown menu -->
       <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
           <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
@@ -352,7 +355,7 @@
       <a href="{% url 'lrg' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Logistic Regression </a>
     </li>
     <li>
-      <a href="{% url 'lvsm' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> LSVM </a>
+      <a href="{% url 'lsvm' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> LSVM </a>
     </li>
     <li>
       <a href="{% url 'knn' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> KNN </a>
@@ -367,69 +370,82 @@
 </div>
 </div>
 </div> 
-
 <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-slate-700">
   <div class="p-10 flex flex-col items-center"> 
     <h1 class="text-center text-3xl text-red-300 mb-14 italic">Multi Label</h1><br/>
-    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button" data-dropdown-toggle="dropdown"> Multi Label <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+    <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"> Multi Label <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+
 <!-- Dropdown menu -->
-<div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
-  
-  <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown">
+<div id="dropdownDefaultCheckbox" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+  <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
     <li>
-      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Linear Regression </a>
+      <a href="{% url 'lgm' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Linear Regression </a>
     </li>
     <li>
-      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Logistic Regression </a>
+      <a href="{% url 'lrgm' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Logistic Regression </a>
     </li>
     <li>
-      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> LSVM </a>
+      <a href="{% url 'lsvmm' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> LSVM </a>
     </li>
     <li>
-      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> KNN </a>
+      <div class="flex items-center">
+        <a href="{% url 'knnm' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> KNN </a>
+      </div>
     </li>
     <li>
-      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Random Forest </a>
+      <div class="flex items-center">
+        <a href="{% url 'rfm' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Random Forest </a>
+      </div>
     </li>
     <li>
-      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Decision Tree </a>
+      <div class="flex items-center">
+        <a href="{% url 'dtm' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Decision Tree </a>
+      </div>
     </li>
-  </ul>
+</div>
+
 </div>
 </div>
-</div>  
-  <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-slate-700">
-    <div class="p-10 flex flex-col items-center"> 
-      <h1 class="text-center text-3xl text-red-300 mb-14 italic">Results</h1><br/>
-      <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button" data-dropdown-toggle="dropdown"> Results <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-<!-- Dropdown menu -->
-<div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
+
+<div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-slate-700">
+  <div class="p-10 flex flex-col items-center"> 
+    <h1 class="text-center text-3xl text-red-300 mb-14 italic">Results</h1><br/>
     
-    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown">
-      <li>
-        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Linear Regression </a>
-      </li>
-      <li>
-        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Logistic Regression </a>
-      </li>
-      <li>
-        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> LSVM </a>
-      </li>
-      <li>
-        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> KNN </a>
-      </li>
-      <li>
-        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Random Forest </a>
-      </li>
-      <li>
-        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Decision Tree </a>
-      </li>
-    </ul>
+    <button id="dropdownUsersButton" data-dropdown-toggle="dropdownUsers" data-dropdown-placement="bottom" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"> Results <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+    <!-- Dropdown menu -->
+    <div id="dropdownUsers" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+  <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+    <li>
+      <a href="{% url 'lgr' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Linear Regression </a>
+    </li>
+    <li>
+      <a href="{% url 'lrgr' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Logistic Regression </a>
+    </li>
+    <li>
+      <a href="{% url 'lsvmr' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> LSVM </a>
+    </li>
+    <li>
+      <div class="flex items-center">
+        <a href="{% url 'knnr' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> KNN </a>
+      </div>
+    </li>
+    <li>
+      <div class="flex items-center">
+        <a href="{% url 'rfr' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Random Forest </a>
+      </div>
+    </li>
+    <li>
+      <div class="flex items-center">
+        <a href="{% url 'dtr' %}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"> Decision Tree </a>
+      </div>
+    </li>
 </div>
 </div>
-</div>         
 </div>
-<div class="mt-5">
+
+        
+</div>
+<div class="mt-5 flex items-center justify-center md\:h-10">
 <a href="#home" style="text-decoration:none" class="toggle w-30 px-3 py-2 mr-15 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Back To Top</a>
 <a href="#Work Flow" style="text-decoration:none" class="toggle w-30 px-3 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Next Page</a>
 </div>
@@ -437,8 +453,9 @@
 
 <section class="py-20 mt-0 p-10" id="Work Flow">
   <h1 class="text-center text-4xl font-extrabold text-black mb-10 italic">Work Flow</h1>
-  <div class="text-3xl p-3">
-    <div class="p-5">Collecting Raw Network Packets ➤ Preparing Data Set ➤ Data Pre Processing ➤ Data Normalization ➤ 
+  <div class="lg:p-5 text-3xl">
+    <div class="p-0">
+        <h1 class="text-center">Collecting Raw Network Packets ➤ Preparing DataSet➤ Data Pre Processing ➤ Data Normalization ➤</h1>
         <h1 class="text-center">Data Splitting ➤Train The Model ➤ Evaluate the accuracy, precision, recall and f1 score ➤ </h1> 
         <h1 class="text-center">Created a Web App using Django framework.</h1></b><div>
   </div>
@@ -449,7 +466,7 @@
     <h3 class="text-xl w-auto font-medium leading-tight text-primary text-center bg-neutral-800 text-white underline rounded-l-lg rounded-r-lg" id="about">Techonolgies Used In Development</h3><br/>
     <div class="mb-6 flex justify-center">
       <a
-        href="https://www.linkedin.com/in/palacharla-rama-krishna-33a44a218/"
+        href="https://jupyter.org/"
         type="button"
         class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
         data-te-ripple-init
@@ -465,7 +482,7 @@
       </a>
 
       <a
-        href="https://www.linkedin.com/in/palacharla-rama-krishna-33a44a218/"
+        href="https://docs.djangoproject.com/en/4.2/"
         type="button"
         class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
         data-te-ripple-init
@@ -481,7 +498,7 @@
       </a>
 
       <a
-        href="https://github.com/Revan-droid/MLProject2"
+        href="https://tailwindcss.com/"
         type="button"
         class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
         data-te-ripple-init
@@ -497,7 +514,7 @@
       </a>
 
       <a
-        href="https://www.google.com/"
+        href="https://github.com/Revan-droid/MLProject2"
         type="button"
         class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
         data-te-ripple-init

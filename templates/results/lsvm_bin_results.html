@@ -1,7 +1,8 @@
+{% load static %}
 <head>
     <style>
     body{
-	background: url(../../apple/static/images/background.jpg) no-repeat;
+	background: url(../static/images/background.jpg) no-repeat;
 	background-size: cover;
 	letter-spacing: 0.2px;
     }
@@ -18,7 +19,8 @@
     }
     </style>
 </head> 
+{% csrf_token %}
 <body>
-    <h1>Results for LVSM Binary classification</h1>
-    <img src="../../apple/static/images/lsvm_bin_result.png">
+    <h1>Results for LSVM Binary classification</h1>
+    <img src='{% static "images/lsvm_bin_result.png" %}'>
 </body>

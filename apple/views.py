@@ -116,11 +116,44 @@ def lg(request):
 def lrg(request):
     return render(request,'Binary Labels/lrg.html')
 
-def lvsm(request):
-    return render(request,'Binary Labels/lvsm.html')
+def lsvm(request):
+    return render(request,'Binary Labels/lsvm.html')
 
 def rf(request):
     return render(request,'Binary Labels/rf.html')
 
+def dtm(request):
+    return render (request,'Multi Labels/dtm.html')
+
+def knnm(request):
+    return render (request ,'Multi Labels/knnm.html')
+
 def lgm(request):
-    return render(request,'Multi Labels/lgm.html')
+    return render(request ,'Multi Labels/lgm.html')
+
+def lrgm(request):
+    return render(request,'Multi Labels/lgrm.html')
+
+def lsvmm(request):
+    return render(request,'Multi Labels/lsvmm.html')
+
+def rfm(request):
+    return render(request,'Multi Labels/rfm.html')
+
+def dtr(request):
+    return render (request,'results/dt_bin_results.html')
+
+def knnr(request):
+    return render (request ,'results/knn_bin_results.html')
+
+def lgr(request):
+    return render(request ,'results/lr_bin_results.html')
+
+def lrgr(request):
+    return render(request,'results/logr_bin_results.html')
+
+def lsvmr(request):
+    return render(request,'results/lsvm_bin_results.html')
+
+def rfr(request):
+    return render(request,'results/rf_bin_results.html')

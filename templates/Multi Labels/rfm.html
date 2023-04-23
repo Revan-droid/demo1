@@ -1,7 +1,8 @@
+{% load static %}
 <head>
     <style>
     body{
-        background: url(../../apple/static/images/background.jpg) no-repeat;
+        background: url(../static/images/background.jpg) no-repeat;
         background-size: cover;
         letter-spacing: 0.2px;
       }
@@ -20,5 +21,5 @@
 </head>
 <body>
     <h1 align:"center">Random Forest for Multi Classification</h1>
-    <img src="../../ML_models/plot/rf_real_pred_multi.png" >
+    <img src='{% static "images/rf_real_pred_multi.png" %}'>
 </body>
