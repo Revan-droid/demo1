@@ -59,255 +59,41 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 </head>
 <body>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <section class="mt-12 mx-5">
+<script src="https://cdn.tailwindcss.com"></script>
+<section class="mt-12 mx-5">
     <div class="md:p-10 mb-7">
     <h2 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg p-19" >National security always matters, obviously.But the reality is </h2><h2 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg p-19" >that if you have an open door in your software for </h2> <h2 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg mb-7 p-19" >the good guys, the bad guys get in there, too. </h2>
     </div>
     <h3 class="text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg text-center mb-10">-Tim Cook</h3>
     <p class="text-3xl font-thin leading-none text-primary rounded-l-lg rounded-r-lg text-center no-underline hover:underline mb-3"><a href="#form">A portal to check intrusion</a></p>
-  </section>
-  <br/>
-  <section class="py-20 mt-28 p-10">
+</section>
+<br/>
+<section class="py-20 mt-28 p-10">
     <!-- Heading -->
     <div class="sm:w-full lg:w-full mx-auto px-2"  id="form">
       <h1 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg mb-7">Predict Your Intrusion Now</h1>
       <h3 class="text-center text-2xl text-bookmark-grey mt-4">
-        Fill the following details of your data packet <br/>to Predict the intrusion on your computer.
+        Select The Classification
       </h3>
     </div>
+<form class="flex flex-col justify-center items-center m" action="Mclassified/" method="post">
+  {% csrf_token %} 
+<label for="countries_disabled" class="block mb-2 text-xl font-medium text-gray-900 dark:text-white mt-5"></label>
+<select name ="hi" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option selected>Choose</option>
+  <option value="BIN">Binary Classification</option>
+  <option value="MUL">Multi Classification</option>
+</select>
+            
+<div class="flex flex-col justify-center items-center m">
+       <div>
+           <input type="submit" class="toggle md:flex w-full md:w-auto px-4 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white my-3 mt-10 md:rounded">
+      </div>
+</div>
+</form>
+
     <!-- Cards -->
-<form action="results/" method="post">
-{% csrf_token %}
-<div class="container grid grid-cols-1 xl:grid-cols-4 gap-16 max-w-screen-2xl mt-16">
-      <!-- Card 1 -->
-      <div class="flex flex-col w-full rounded-md shadow-md xl:mb-16 bg-purple-200">
-        <div class="p-10 flex flex-col items-center">
-                
-          <button id="dropdownHelperButton" data-dropdown-toggle="dropdownHelper" class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Info Box<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
 
-<!-- Dropdown menu -->
-<div id="dropdownHelper" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-60 dark:bg-gray-700 dark:divide-gray-600">
-    <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioHelperButton">
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>Rate</div>
-                <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">The data rate is the number of bits transmitted from one device to another or over a network per second.</p>
-              </label>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-5" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>STTL</div>
-                <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">Source to destination time to live value.</p>
-              </label>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>SLOAD</div>
-                <p id="helper-radio-text-6" class="text-xs font-normal text-gray-500 dark:text-gray-300">Source bits per second.</p>
-              </label>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>DLOAD</div>
-                <p id="helper-radio-text-6" class="text-xs font-normal text-gray-500 dark:text-gray-300">Destination bits per second.</p>
-              </label>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>CT_SRV_SRC</div>
-                <p id="helper-radio-text-6" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same service and same Source address in 100 connections according to last time.</p>
-              </label>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <div class="ml-2 text-sm">
-              <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-                <div>CT_STATE_TTL</div>
-                <p id="helper-radio-text-6" class="text-xs font-normal text-gray-500 dark:text-gray-300">No. for each state according to specific range of values for source/destination to live.</p>
-              </label>
-          </div>
-        </div>
-      </li>
-    </ul>
-</div>
-
-        </div>
-      </div>
-      <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-white">
-        <div class="p-10 flex flex-col items-center">
-                <div class="form-group text-center">
-                    <label for = "rate" class="font-bold">Rate: </label><br>
-                    <input type="Number" name="rate" id="rate" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-                    class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-                </div>
-                <div class="form-group text-center">
-                    <label for="sttl" class="font-bold">STTL: </label><br>
-                    <input type="Number" name="sttl" id="sttl" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-                    class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-                </div>
-                <div class="form-group text-center">
-                    <label for="sload" class="font-bold">SLOAD: </label><br>
-                    <input type="number" name="sload" id="sload" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-                    class="rounded-md  border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-                </div>
-                <div class="form-group text-center">
-                    <label for="dload" class="font-bold">DLOAD: </label><br>
-                    <input type="Number" name="dload" id="dload" placeholder="Enter a Number" step="0.0001" min="0" max="100000"required="true"
-                    class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-                </div>
-                <div class="form-group text-center">
-                  <label for="ct_srv_src" class="font-bold">ct_srv_src: </label><br>
-                  <input type="Number" name="ct_srv_src" id="ct_srv_src" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-                  class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2"
-                  >
-                </div>
-              
-              <div class="form-group text-center">
-                  <label for="ct_state_ttl" class="font-bold">ct_state_ttl: </label><br>
-                  <input type="Number" name="ct_state_ttl" id="ct_state_ttl" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-                  class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-              </div>
-              
-              <div class="form-group text-center">
-                  <label for="ct_dst_ltm" class="font-bold">ct_dst_ltm: </label><br>
-                  <input type="Number" name="ct_dst_ltm" id="ct_dst_ltm" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-                  class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-              </div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-white">
-        <div class="p-10 flex flex-col items-center">
-        <div class="form-group text-center">
-          <label for="ct_src_dport_ltm" class="font-bold">ct_src_dport_ltm: </label><br>
-          <input type="Number" name="ct_src_dport_ltm" id="ct_src_dport_ltm" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-          class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-        </div>
-        <div class="form-group text-center">
-          <label for="ct_dst_sport_ltm" class="font-bold">ct_dst_sport_ltm: </label><br>
-          <input type="Number" name="ct_dst_sport_ltm" id="ct_dst_sport_ltm" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-          class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-      </div>
-      
-      <div class="form-group text-center">
-          <label for="ct_dst_src_ltm" class="font-bold">ct_dst_src_ltm</label><br>
-          <input type="Number" name="ct_dst_src_ltm" id="ct_dst_src_ltm" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-          class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-      </div>                 
-
-      <div class="form-group text-center">
-          <label for="ct_src_ltm" class="font-bold">ct_src_ltm: </label><br>
-          <input type="Number" name="ct_src_ltm" id="ct_src_ltm" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-          class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-      </div>
-
-      <div class="form-group text-center">
-          <label for="ct_srv_dst" class="font-bold">ct_srv_dst: </label><br>
-          <input type="Number" name="ct_srv_dst" id="ct_srv_dst" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-          class="rounded-md border-blue-600  text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-      </div>
-      <div class="form-group text-center">
-        <label for="state_CON" class="font-bold">state_CON: </label><br>
-        <input type="Number" name="state_CON" id="state_CON" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-        class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-      </div>
-      <div class="form-group text-center">
-        <label for="state_INT" class="font-bold">state_INT: </label><br>
-        <input type="Number" name="state_INT" id="state_INT" placeholder="Enter a Number" step="0.0001" min="0" max="100000" required="true"
-        class="rounded-md border-blue-600 text-sm  bg-transparent outline-blue-600 shadow-sm mb-2">
-      </div>
-     </div>
-    </div>
-    <div class="flex flex-col rounded-md shadow-md xl:mb-16 bg-purple-200">
-      <div class="p-10 flex flex-col items-center">
-        
-<button id="dropdownToggleButton" data-dropdown-toggle="dropdownToggle" class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Info Box<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-
-<!-- Dropdown menu -->
-<div id="dropdownToggle" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-72 dark:bg-gray-700 dark:divide-gray-600">
-    <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownToggleButton">
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-           <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-              <div>CT_DST_LTM</div>
-            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Destination address in 100 Connections according to last time.</p>
-          </label>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-            <div>CT_SRC_DPORT_LTM</div>
-            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Source address and Destination Port in 100 Connections according to last time.</p>
-          </label>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-            <div>CT_DST_SPORT_LTM</div>
-            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Destination address and Source Port in 100 Connections according to last time.</p>
-          </label>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-            <div>CT_DST_SRC_LTM</div>
-            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the same Source address and Destination addressin 100 Connections according to last time.</p>
-          </label>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-            <div>CT_SRC_LTM</div>
-            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the Same Source address in 100 Connections according to last time.</p>
-          </label>
-        </div>
-      </li>
-      <li>
-        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-          <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
-            <div>CT_SRV_DST</div>
-            <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">No.of Connections that contain the Same Service and Destination address in 100 connections according to last time.</p>
-          </label>
-        </div>
-      </li>
-    </ul>
-</div>
-
-      </div>
-      </div>
-<!-- Card 3 -->
-</div>
-     <div class="flex flex-col justify-center items-center m">
-       <div class="form-group">
-           <input type="submit" class="toggle md:flex w-full md:w-auto px-4 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white my-3 md:rounded">
-      </div>
-     </div>
- </form>
 <div class="mt-5 flex items-center justify-center md\:h-10">
 <a href="#home" style="text-decoration:none" class="toggle w-30 px-3 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Back To Top</a>
 <a href="#analyseddata" style="text-decoration:none" class="toggle w-30 px-3 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Next Page</a>

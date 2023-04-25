@@ -1,40 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
+{% load static tailwind_tags %}
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Results Page</title>
-    <link rel="stylesheet" href='{% static "home4.css"%}' type="text/css">
+    <title>Intrusion Detection System</title>    
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
-    <style>
-      h2{
-        color: aliceblue;
-      }
-    </style>
+</head>
+<body class="bg-pink-50">
+{% csrf_token %} 
+<script src="https://cdn.tailwindcss.com"></script>
+{% tailwind_css %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />    
 </head>
 <body>
-{% csrf_token%}
-<nav id="navbar">
-  <div id="logo">
-  </div>
-  <ul>
-      <li class="item"><a href="{% url 'home' %}">Home</a></li>
-      <li class="item"><a href="{% url 'home' %}#form">Form</a></li>
-      <li class="item"><a href="{% url 'home' %}#analyseddata-container">Analysed Data</a></li>
-      <li class="item"><a href="{% url 'logout' %}">Logout</a></li>
-  </ul>
-</nav>
-<section id="home">
-  <h1 class="h-primary">Here are Your Results</h1>
-  <p style="font-size: 30px;">Your Score is: {{answer}}</p>
-  <p style="font-size: 30px;">{{attack}}</p>
-  <h2 id="h2">
-      Thanks for choosing us!
-  </h2>
-</section>
+  <nav class="flex flex-wrap items-center justify-between p-3 bg-neutral-800 mx-5 mt-5 mb-40 rounded-l-lg rounded-r-lg" id="home">  
+    <div class="flex md:hidden">
+      <button id="hamburger">
+        <img class="toggle block bg-white" src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png" width="40" height="40" />
+        <img class="toggle hidden" src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png" width="40" height="40" />
+      </button>
+    </div>      
+    <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
+        <a href="{% url 'home' %}"class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">Home</a>
+    </div>
+    <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
+        <a href="{% url 'home' %}#form" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">Form</a>
+    </div>   
+    <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
+        <a href="{% url 'home' %}#analyseddata" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">Analysed Data</a>
+    </div> 
+    <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
+        <a href="{% url 'home' %}#Work Flow" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">Work Flow</a>
+    </div>
+    <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 border-t-2">        
+        <a href="{% url 'home' %}#about" class="block md:inline-block text-white hover:text-blue-500 px-3 py-3 border-b-2">About</a>
+    </div> 
+      <a href="{% url 'logout' %}" class="toggle hidden md:flex w-full md:w-auto px-4 py-2 text-right bg-blue-900 hover:bg-blue-500 text-white my-3 md:rounded">Log out</a>
+  </nav> 
+  <script>
+    document.getElementById("hamburger").onclick = function toggleMenu() {
+    const navToggle = document.getElementsByClassName("toggle");
+        for (let i = 0; i < navToggle.length; i++) {
+          navToggle.item(i).classList.toggle("hidden");
+        }
+      };
+  </script>     
 </body>
+</html>
+<!DOCTYPE html>
+<head>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <section class="mt-12 mx-5" id="home" >
+    <div class="md:p-10 mb-7">
+        <h1 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg p-19 mb-2">Here are Your Results</h1>
+        <p class="text-3xl font-bold leading-none text-primary rounded-l-lg rounded-r-lg text-center no-underline hover:underline mb-3">Your Score is: {{answer}}</p>
+        <p class="text-3xl font-bold leading-none text-primary rounded-l-lg rounded-r-lg text-center no-underline hover:underline mb-3">{{attack}}</p>
+        <h2 class="text-center text-black text-3xl font-medium leading-tight text-primary rounded-l-lg rounded-r-lg p-19 mb-2">
+            Thanks for choosing us!
+        </h2>
+      </section>
+    </div>
+    <div class="mt-5 flex items-center justify-center md\:h-10 md:mt-50">
+    <a href="{% url 'home' %}#form" style="text-decoration:none" class="toggle w-30 px-3 py-2 mr-15 text-right bg-blue-900 hover:bg-blue-500 text-white mx-px md:rounded" method="post" role="button">Fill the form again.</a>
+    </div>
+  <br/>
 
+
+</body>
 </html>

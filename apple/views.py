@@ -4,17 +4,19 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 
 import joblib
+from sklearn.preprocessing import MinMaxScaler
+import numpy as np
+
 #with open('ML_models\lr_bin.joblib', 'rb') as f:
     #loaded_lr_model =joblib.load(f)
 
 
-loaded_lr_model = joblib.load("ML_models/rf_bin.joblib")
+loaded_rf_model = joblib.load("ML_models/rf_bin.joblib")
+loaded_lsvm_model = joblib.load("ML_models/lsvm_multi.joblib")
 
 # Create your views here.
 @login_required(login_url='login')
 def HomePage(request):
-    if(request.method == 'POST'):
-        return render (request,'classified2.html')
     return render (request,'home.html')
 
 def ResultsPage(request):
@@ -47,12 +49,13 @@ def ResultsPage(request):
                  float(ct_srv_dst),
                  float(state_CON),
                  float(state_INT)]]
-        our_labels = loaded_lr_model.predict(labels)
-        round = lambda x:1 if x>0.6 else 0
+        our_labels = loaded_rf_model.predict(labels)
+        print(our_labels)
+        round = lambda x:1 if x>=0.5 else 0
         b=round(our_labels)
-        if b==0:
-            a="Normal"
         if b==1:
+            a="Normal"
+        if b==0:
             a="Abnormal"
         details={
             "answer":b,
@@ -61,6 +64,85 @@ def ResultsPage(request):
         return render(request,'results.html',details)
      
     return (request,'results.html')
+
+def ResultsPage2(request):
+    if request.method == 'POST':
+        dttl=request.POST.get('dttl','default')
+        swin=request.POST.get('swin','default')
+        dwin=request.POST.get('dwin','default')
+        tcprtt=request.POST.get('tcprtt','default')
+        synack=request.POST.get('synack','default')
+        ackdat=request.POST.get('ackdat','default')
+        proto_tcp=request.POST.get('proto_tcp','default')
+        proto_udp=request.POST.get('proto_udp','default')
+        service_dns=request.POST.get('service_dns','default')		
+        state_CON=request.POST.get('state_CON','default')
+        state_FIN=request.POST.get('state_FIN','default')
+        attack_cat_Analysis=request.POST.get('attack_cat_Analysis','default')
+        attack_cat_DoS=request.POST.get('attack_cat_DoS','default')
+        attack_cat_Exploits=request.POST.get('attack_cat_Exploits','default')
+        attack_cat_Normal=request.POST.get('attack_cat_Normal','default')
+        labels=[[float(dttl),
+                 float(swin),
+                 float(dwin),
+                 float(tcprtt),
+                 float(synack),
+                 float(ackdat),
+                 float(proto_tcp),
+                 float(proto_udp),
+                 float(service_dns),
+                 float(state_CON),
+                 float(state_FIN),
+                 float(attack_cat_Analysis),
+                 float(attack_cat_DoS),
+                 float(attack_cat_Exploits),
+                 float(attack_cat_Normal)
+                ]]
+        our_labels = loaded_lsvm_model.predict(labels)
+        print("our_labels")
+        round = lambda x:1 if x>=0.5 else 0
+        x = int(our_labels)
+        y = our_labels-x
+        z=round(y)
+        if z==1 :
+           b=x+1
+        b=x
+        if b==0:
+            a="Analysis"
+        elif b==1:
+            a="Backdoor"
+        elif b==2:
+            a="DoS"
+        elif b==3:
+            a="Exploits"
+        elif b==4:
+            a="Fuzzers"
+        elif b==5:
+            a="Generic"
+        elif b==6:
+            a="Normal"
+        elif b==7:
+            a="Reconnaissance"
+        else :
+            a="Worms"
+
+        details={
+            "answer":b,
+            "attack":a,
+        }
+        return render(request,'results.html',details)
+
+def Mclassified(request):
+    if(request.method=='POST'):
+        val=request.POST.get('hi')
+        if(val == 'MUL'):
+            return render(request,'Mclassified.html')
+        else:
+            return render(request,'Bclassified.html')
+    return (request,'home.html')
+
+def Bclassified(request):
+    return (request,'Bclassified.html')
 
 def SignUpPage(request):
     if request.method=='POST':
