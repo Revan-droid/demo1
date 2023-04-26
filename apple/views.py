@@ -4,8 +4,9 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 
 import joblib
-from sklearn.preprocessing import MinMaxScaler
 import numpy as np
+from sklearn import preprocessing
+
 
 #with open('ML_models\lr_bin.joblib', 'rb') as f:
     #loaded_lr_model =joblib.load(f)
@@ -64,6 +65,8 @@ def ResultsPage(request):
         return render(request,'results.html',details)
      
     return (request,'results.html')
+
+
 
 def ResultsPage2(request):
     if request.method == 'POST':
